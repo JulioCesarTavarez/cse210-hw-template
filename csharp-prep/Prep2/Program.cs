@@ -11,6 +11,7 @@ class Program
 
         if (number_grade >=70)
         {
+            letter = "C";
             if (number_grade >=90)
             {
                 letter = "A";
@@ -19,7 +20,7 @@ class Program
             {
                 letter = "B";
             }
-            letter = "C";
+            
         }
         else if (number_grade >= 60)
         {
