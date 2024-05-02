@@ -10,7 +10,7 @@ class Program
         Console.WriteLine("Guess a number between 1 and 100");
         do
         {    
-            Console.Write("Guess a number between 1 and 100");
+
             Console.Write("What is your guess ");
             string InputGuess = Console.ReadLine();
             NumberGuess = int.Parse(InputGuess);
