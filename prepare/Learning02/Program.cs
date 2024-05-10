@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 class Program
 {
@@ -14,16 +15,16 @@ class Program
         job2._company="Apple";
         job2._startYear=2022;
         job2._endYear=2023;
-        
-        job1.Display();
-        job2.Display();
+    
 
 
-    Resume myResume = new();
+        Resume myResume = new();
+        myResume._name ="Cesar Tavarez";
+
         myResume._jobs.Add(job1);
         myResume._jobs.Add(job2);
 
-    Console.WriteLine($"{myResume._jobs[0]._jobTitle}");
+        myResume.DisplayResume();
 
     }
 }
