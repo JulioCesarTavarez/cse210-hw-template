@@ -18,28 +18,28 @@ public class Mainmenu
         Console.Write("What would you like to do? ");
         int choice = int.Parse(Console.ReadLine());
 
-    if (choice == 1)
+    if (choice == 1) // if they enter one they write an entry.
         {
             journal.WriteEntry();
         }
-    else if (choice == 2)
+    else if (choice == 2) // if they enter 2 they will get displayed an entry
         {
             journal.DisplayEntries();
         }
-    else if (choice == 3)
+    else if (choice == 3)// if they enter 3 they will load past entries
         {
             journal.LoadEntries();
         }
-    else if (choice == 4)
+    else if (choice == 4) // 4 will save entires
         {
             journal.SaveEntries();
         }
-    else if (choice == 5)
+    else if (choice == 5) // this will exit the program and say goodbye
         {
             Console.WriteLine("Goodbye!");
             return;
         }
-    else
+    else // if a number other then 1-5 is picked it will ask the user to try again
         {
             Console.WriteLine("Invalid choice, please try again.");
         }
