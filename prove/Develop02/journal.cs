@@ -20,7 +20,7 @@ public class Journal
             entry.Display();
         }
     }
-    public void LoadEntries()
+    public void LoadEntries() // this doesnt really work
     {
         Console.Write("Please enter the file you want to load: ");
         string filePath = Console.ReadLine();
@@ -41,7 +41,7 @@ public class Journal
         }
     }
 
-    public void SaveEntries()
+    public void SaveEntries() //this doesnt really work either but I tried.
     {
         Console.Write("Please enter the file name to save: ");
         string filePath = Console.ReadLine();
