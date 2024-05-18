@@ -8,7 +8,7 @@ public class Journal
 
     public void WriteEntry()
     {
-        Entry newEntry = new Entry();
+        Entry newEntry = new();
         newEntry.PromptUser();
         entries.Add(newEntry);
         Console.WriteLine("Entry added successfully.");

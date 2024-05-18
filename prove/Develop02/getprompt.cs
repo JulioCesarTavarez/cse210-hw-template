@@ -1,26 +1,21 @@
 using System;
 using Microsoft.VisualBasic;
 
-public class Prompt
+public static class PromptGenerator
 {
-
-
-
-    static void JournalPrompts()
+    // I had to get help from Chat GPT here because I didnt know how to use the random generator.
+    private static readonly List<string> prompts = new List<string>
     {
-        List<string> questions = new();
-        string question1 = "What was the highlight of your day?";
-        string question2 = "What was the lowlight of your day?";
-        string question3 = "What is the wierdest thing you saw today";
-        string question4 = "Who did you run into today?";
-        string question5 = "What time did you wake up today?";
+        "What was the highlight of your day?",
+        "What was the lowlight of your day?",
+        "What is the weirdest thing you saw today?",
+        "Who did you run into today?",
+        "What time did you wake up today?"
+    };
 
-        questions.Add(question1);
-        questions.Add(question2);
-        questions.Add(question3);
-        questions.Add(question4);
-        questions.Add(question5);
-    }    
-    
-
+    public static string GetRandomPrompt()
+    {
+        Random rand = new();
+        return prompts[rand.Next(prompts.Count)];
+    }
 }

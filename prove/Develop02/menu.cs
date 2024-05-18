@@ -6,7 +6,8 @@ public class Mainmenu
 {
     static void Main()
     {
-        Journal journal = new Journal();
+        // display options
+        Journal journal = new();
         Console.WriteLine("Welcome to the Journal Program!");
         Console.WriteLine("Please select one of the following choices");
         Console.WriteLine("1. Write");
@@ -17,34 +18,34 @@ public class Mainmenu
         Console.Write("What would you like to do? ");
         int choice = int.Parse(Console.ReadLine());
 
-if (choice == 1)
-                {
-                    journal.WriteEntry();
-                }
-                else if (choice == 2)
-                {
-                    journal.DisplayEntries();
-                }
-                else if (choice == 3)
-                {
-                    journal.LoadEntries();
-                }
-                else if (choice == 4)
-                {
-                    journal.SaveEntries();
-                }
-                else if (choice == 5)
-                {
-                    Console.WriteLine("Goodbye!");
-                    return;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid choice, please try again.");
-                }
+    if (choice == 1)
+        {
+            journal.WriteEntry();
+        }
+    else if (choice == 2)
+        {
+            journal.DisplayEntries();
+        }
+    else if (choice == 3)
+        {
+            journal.LoadEntries();
+        }
+    else if (choice == 4)
+        {
+            journal.SaveEntries();
+        }
+    else if (choice == 5)
+        {
+            Console.WriteLine("Goodbye!");
+            return;
+        }
+    else
+        {
+            Console.WriteLine("Invalid choice, please try again.");
+        }
     }
     
-    
+
 
 
     static string LoadFile(string filePath)
@@ -60,14 +61,14 @@ if (choice == 1)
         string fileContents = LoadFile(filePath);
 
         if (fileContents != null)
-        {
-            Console.WriteLine("content: ");
-            Console.WriteLine(fileContents);
-        }
+            {
+                Console.WriteLine("content: ");
+                Console.WriteLine(fileContents);
+            }
         else
-        {
-            Console.WriteLine($"Failed to loadthe file: {filePath}");
-        }
+            {
+                Console.WriteLine($"Failed to loadthe file: {filePath}");
+            }
 
     }
 }
