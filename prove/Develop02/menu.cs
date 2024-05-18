@@ -7,10 +7,11 @@ public class Mainmenu
     static void Main()
     {
         bool loop = true;
+                        Journal journal = new();
         while (loop == true) // this wil continue to run till the user enters choise 5 making it false
         {
                 // display options
-                Journal journal = new();
+
                 Console.WriteLine("\nWelcome to the Journal Program!");
                 Console.WriteLine("Please select one of the following choices");
                 Console.WriteLine("1. Write");
