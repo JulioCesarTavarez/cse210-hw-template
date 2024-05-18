@@ -7,7 +7,7 @@ public class Mainmenu
     static void Main()
     {
         bool loop = true;
-                        Journal journal = new();
+            Journal journal = new();
         while (loop == true) // this wil continue to run till the user enters choise 5 making it false
         {
                 // display options
