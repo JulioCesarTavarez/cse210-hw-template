@@ -10,7 +10,9 @@ public static class PromptGenerator
         "What was the lowlight of your day?",
         "What is the weirdest thing you saw today?",
         "Who did you run into today?",
-        "What time did you wake up today?"
+        "What time did you wake up today?",
+        "How did i see the hand of the lord in my life today",
+        "If I had one thing I could do over today what would it be?"
     };
 
     public static string GetRandomPrompt()
