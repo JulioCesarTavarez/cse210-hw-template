@@ -13,8 +13,8 @@ public class Mainmenu
         Console.WriteLine("1. Write");
         Console.WriteLine("2. Display");
         Console.WriteLine("3. Load");
-        Console.WriteLine("Save");
-        Console.WriteLine("Quite");
+        Console.WriteLine("4. Save");
+        Console.WriteLine("5. Quite");
         Console.Write("What would you like to do? ");
         int choice = int.Parse(Console.ReadLine());
 
