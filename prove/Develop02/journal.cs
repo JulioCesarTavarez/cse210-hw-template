@@ -20,7 +20,7 @@ public class Journal
             entry.Display();
         }
     }
-    public void LoadEntries() // this doesnt really work
+    public void LoadEntries() // this might work but you have to have an actual file to type in to load.
     {
         Console.Write("Please enter the file you want to load: ");
         string filePath = Console.ReadLine();

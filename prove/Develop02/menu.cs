@@ -26,7 +26,7 @@ public class Mainmenu
                 {
                     journal.WriteEntry();
                 }
-            else if (choice == 2) // if they enter 2 they will get displayed an entry
+            else if (choice == 2) // if they enterss 2 they will get displayed an entry
                 {
                     journal.DisplayEntries();
                 }
