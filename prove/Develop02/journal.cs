@@ -4,18 +4,18 @@ using Microsoft.VisualBasic;
 
 public class Journal
 {
-    List<Entry> entries = new List<Entry>();
+    List<Entry> _entries = new List<Entry>();
 
     public void WriteEntry()
     {
         Entry newEntry = new();
         newEntry.PromptUser();
-        entries.Add(newEntry);
+        _entries.Add(newEntry);
         Console.WriteLine("Entry added successfully.");
     }
         public void DisplayEntries()
     {
-        foreach (Entry entry in entries) // this will display al the entries in the list
+        foreach (Entry entry in _entries) // this will display al the entries in the list
         {
             entry.Display();
         }
@@ -27,11 +27,11 @@ public class Journal
         try
         {
             string[] lines = File.ReadAllLines(filePath);
-            entries.Clear();
+            _entries.Clear();
             foreach (string line in lines)
             {
                 Entry entry = Entry.FromString(line);
-                entries.Add(entry);
+                _entries.Add(entry);
             }
             Console.WriteLine("Entries loaded successfully.");
         }
@@ -48,7 +48,7 @@ public class Journal
         try
         {
             List<string> lines = new List<string>();
-            foreach (Entry entry in entries)
+            foreach (Entry entry in _entries)
             {
                 lines.Add(entry.ToString());
             }
