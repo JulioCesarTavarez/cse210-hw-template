@@ -6,6 +6,8 @@ public class Mainmenu
 {
     static void Main()
     {
+        bool loop = true;
+        while (loop == true){
         // display options
         Journal journal = new();
         Console.WriteLine("Welcome to the Journal Program!");
@@ -43,6 +45,7 @@ public class Mainmenu
         {
             Console.WriteLine("Invalid choice, please try again.");
         }
+    }    
     }
     
 

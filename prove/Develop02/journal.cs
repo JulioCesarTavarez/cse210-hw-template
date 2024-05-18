@@ -4,7 +4,7 @@ using Microsoft.VisualBasic;
 
 public class Journal
 {
-    private List<Entry> entries = new List<Entry>();
+    List<Entry> entries = new List<Entry>();
 
     public void WriteEntry()
     {
@@ -15,7 +15,7 @@ public class Journal
     }
         public void DisplayEntries()
     {
-        foreach (Entry entry in entries)
+        foreach (Entry entry in entries) // this will display al the entries in the list
         {
             entry.Display();
         }
