@@ -13,7 +13,7 @@ public class Journal
         _entries.Add(newEntry);
         Console.WriteLine("Entry added successfully.");
     }
-        public void DisplayEntries()
+    public void DisplayEntries()
     {
         foreach (Entry entry in _entries) // this will display al the entries in the list
         {

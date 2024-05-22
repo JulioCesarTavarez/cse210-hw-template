@@ -54,7 +54,7 @@ public class Mainmenu
 
 
 
-    static string LoadFile(string filePath)
+    static string LoadFile(string filePath)// I was messing with this but it is in the journal space
     {
         string fileContents = File.ReadAllText(filePath);
         return fileContents;
