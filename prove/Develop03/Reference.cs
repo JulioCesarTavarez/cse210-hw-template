@@ -1,11 +1,11 @@
-// public  class Programm
-// {
-//     public static void Main()
-//     {
-//         Reference scripture = new Scripture();
+public class Reference
+{
+    public string _book = "John";
+    public int _chapter = 3;
+    public int _verse = 16;
 
-
-//         Verse verse = new();
-//         Words = Split(scripture._verse);
-//     }
-// }
+    public void RefDisplay()
+    {
+        Console.WriteLine($"{_book} {_chapter}:{_verse}");
+    }
+}
