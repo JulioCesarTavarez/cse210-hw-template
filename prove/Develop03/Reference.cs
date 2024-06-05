@@ -1,8 +1,8 @@
 public class Reference
 {
-    public string _book = "John";
-    public int _chapter = 3;
-    public int _verse = 16;
+    private string _book = "John";
+    private int _chapter = 3;
+    private int _verse = 16;
 
     public void RefDisplay()
     {

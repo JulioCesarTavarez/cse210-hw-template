@@ -6,28 +6,53 @@ class Program
 {
     static void Main(string[] args)
     {
-
-        bool _memorizeLoop = false;
-        while (_memorizeLoop == false)
-        {
             Reference scriptureref = new Reference();
             scriptureref.RefDisplay();
             Scripture scripture = new Scripture();
             scripture.Display();
+            Console.WriteLine($"\n\nTo continue hit enter to quit please enter Q");
+            string quit = Console.ReadLine();
+            bool memorizeLoop = false;
+            if (quit == "Q")
+            {
+                memorizeLoop = true;
+            }else
+            {
+                memorizeLoop = false;
+            }
 
-            scripture.Display();
+
+
+        while (memorizeLoop == false)
+        {
+            Console.Clear();
+            scriptureref.RefDisplay();
+
             int wordPlace = scripture.Rand();
             scripture.Replace(wordPlace);
             scripture.Display();
 
+            Console.WriteLine($"\nTo continue hit enter to quit please enter Q");
+            quit = Console.ReadLine();
+            if (quit.ToUpper() == "Q")
             {
-                VerifyDisplay verify = new();
-                List<bool> checke = verify._displayWords();
-                if(checke.TrueForAll(element =>!element))
-                {
-                    _memorizeLoop = true;
-                }
+                memorizeLoop = true;
             }
+
+            if (scripture.AreAllWordsMemorized() == true)
+            {
+                scripture.StartOver();
+            }
+
+            
+            // {
+            //     VerifyDisplay verify = new();
+            //     List<bool> checke = verify._displayWords;
+            //     if(checke.TrueForAll(element =>!element))
+            //     {
+            //         memorizeLoop = true;
+            //     }
+            // }
         }
     }
 }
