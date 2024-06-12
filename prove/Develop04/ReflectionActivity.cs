@@ -1,5 +1,7 @@
-class ReflectionActivity : Activity
+public class ReflectionActivity : Activity
 {
-    public ReflectionActivity(string title) : base(title)
-    {}
+    public ReflectionActivity(string title, string description) : base(title, description)
+    {
+
+    }
 }

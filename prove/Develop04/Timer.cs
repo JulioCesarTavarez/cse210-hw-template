@@ -1,12 +1,9 @@
-class Timer
+public class Timer
 {
-    public void Start(int seconds)
+    public int GetSeconds()
     {
-        Console.WriteLine($"Ready...");
-        Thread.Sleep(1000);
-        Console.WriteLine($"Set...");
-        Thread.Sleep(1000);
-        Console.WriteLine($"Go...");
-        Thread.Sleep(seconds * 1000);
+        Console.WriteLine($"How long would you like to do this activity in seconds? ");
+        int sec = int.Parse(Console.ReadLine());
+        return sec;
     }
 }

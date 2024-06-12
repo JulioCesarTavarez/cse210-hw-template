@@ -1,8 +1,8 @@
-class BreathingActivity : Activity
+public class BreathingActivity : Activity
 {
     // Constructor
-    public BreathingActivity(string title) : base(title)
+    public BreathingActivity(string title,string description) : base(title, description)
     {
-        
+        // Activity();
     }
 }
