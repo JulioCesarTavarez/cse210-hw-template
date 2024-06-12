@@ -23,4 +23,20 @@ public class Activity
         
 
     }
+
+    public void Animation()
+    {
+        List<string> animation = new List<string>();
+
+        animation.Add("Ooo");
+        animation.Add("oOo");
+        animation.Add("ooO");
+
+        foreach (string iteem in animation)
+        {
+            Console.Write($" {iteem}\b\b\b\b");
+
+            Thread.Sleep(3000);
+        }
+    }
 }
