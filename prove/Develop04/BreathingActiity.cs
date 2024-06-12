@@ -9,32 +9,43 @@ public class BreathingActivity : Activity
         int seconds = time.GetSeconds();
         int x = 0;
         float amount = seconds / 6;
-        Animation();
+
+        time.GetReady();
 
         while (x < amount)
         {
             Console.WriteLine("Breathe in...");
-            Console.WriteLine("1");
+            Console.WriteLine("3 seconds");
+            Animation();
             Console.Clear();
             Console.WriteLine("Breathe in...");
-            Console.WriteLine("2");
+            Console.WriteLine("2 seconds");
+            Animation();
             Console.Clear();
             Console.WriteLine("Breathe in...");
-            Console.WriteLine("3");
+            Console.WriteLine("1 seconds");
+            Animation();
             Console.Clear();
 
             
             Console.WriteLine("Breathe out...");
-            Console.WriteLine("1");
+            Console.WriteLine("3 seconds");
+            Animation();
             Console.Clear();
             Console.WriteLine("Breathe out...");
-            Console.WriteLine("2");
+            Console.WriteLine("2 seconds");
+            Animation();
             Console.Clear();
             Console.WriteLine("Breathe out...");
-            Console.WriteLine("3");
+            Console.WriteLine("1 seconds");
+            Animation();
             Console.Clear();
 
             x += 1;
         }
+
+
+    Ending(title, seconds);
+
     }
 }
