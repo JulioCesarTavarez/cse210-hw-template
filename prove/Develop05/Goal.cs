@@ -4,42 +4,54 @@ using System.Reflection.Metadata.Ecma335;
 public class Goal
 {
     protected int _points;
-    private int _totalPoints;
+    static private int _totalPoints;
     protected string _goalName;
-    List<string>_completed = new();
-    List<int> _completedPoints = new();
+    protected string _description;
+
+    public Goal(string goalName, string description, int points)
+    {
+        _points = points;
+        _goalName = goalName;
+        _description = description;
+    
+    }
+
+    public virtual bool IsComplete()
+    {
+        
+        
+        return false;
+    }
 
     public void Update_date_line()
     {}
-    public string GetGoalName()
+    public static string InputGoalName()
     {
         Console.Write("What is the name of your goal? ");
-        _goalName = Console.ReadLine();
+        string goalName = Console.ReadLine();
 
-        return _goalName;
+        return goalName;
     }
 
-    public int GetPoints()
+    public static int InputPoints()
     {
         Console.Write("How many points is this goal worth? ");
-        _points = int.Parse(Console.ReadLine());
-        return _points;
+        int points = int.Parse(Console.ReadLine());
+        return points;
     }
 
-    public string Getdescription()
+    public static string InputDescription()
     {
         Console.WriteLine("Enter a description of the goal: ");
         string description = Console.ReadLine();
         return description;
     }    
 
-    public int GetTotalPoints(List<int> _completedPoints)
+    public static int GetTotalPoints()
     {
-        foreach (int goal in _completedPoints)
-        {
-            _totalPoints += goal;
-        }
         return _totalPoints;
     }
+
+
 
 }

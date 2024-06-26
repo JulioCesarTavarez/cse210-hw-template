@@ -1,7 +1,13 @@
 class Simple : Goal
 {
-    public Simple()
+    bool _finished = false;
+    public Simple(string goalName, string description, int points) : base(goalName, description, points)
     {
-        _goalType = "Simple";
+        
+    }
+
+    public override bool IsComplete()
+    {
+        return _finished;
     }
 }

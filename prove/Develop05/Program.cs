@@ -2,13 +2,18 @@ using System;
 
 class Program
 {
+    static private List<Goal> _goals= new();
     static void Main(string[] args)
     {
+
+  
+
+
 
         int menuChoice = 0;
         do
         {
-            Console.WriteLine($"You have {} points.");
+            Console.WriteLine($"You have {Goal.GetTotalPoints()} points.");
             Console.WriteLine($"\nMenu options");
             Console.WriteLine("1. Creat New Goal");
             Console.WriteLine("2. List Goals");
@@ -22,7 +27,7 @@ class Program
 
             if (menuChoice == 1)
             {
-                Console.WriteLine("The typesof goals are:");
+                Console.WriteLine("The types of goals are:");
                 Console.WriteLine("1. Simple Goal");
                 Console.WriteLine("2. Eternal Goal");
                 Console.WriteLine("3. Checklist Goal");
@@ -31,21 +36,38 @@ class Program
 
                 if (goalChoice == 1)
                 {
-                    Simple simpleGoal = new();
+                    Simple newgoal = new(Goal.InputGoalName(), Goal.InputDescription(), Goal.InputPoints());
+                    _goals.Add(newgoal);
                 }
                 else if (goalChoice == 2)
                 {
-                    Eternal eternalGoal = new();
+                    Eternal newgoal = new(Goal.InputGoalName(), Goal.InputDescription(), Goal.InputPoints());
+                    _goals.Add(newgoal);
                 }
                 else if (goalChoice == 3)
                 {
-                    Checklist checklist = new();
+                    Checklist newgoal = new(Goal.InputGoalName(), Goal.InputDescription(), Goal.InputPoints(), Checklist.InputTimesToDo());
+                    _goals.Add(newgoal);
                 }
+
+
 
 
             }
             else if (menuChoice == 2)
             {
+                Console.WriteLine("The goals are: ");
+                for (int i = 0; i < _goals.Count; i++)
+                {
+                    Console.Write($"{i}.");
+                    if (_goals[i].IsComplete())
+                    {
+                        Console.Write("[X]");
+                    }else
+                    {
+                        Console.Write("[]");
+                    }
+                }
                 
             }
             else if (menuChoice == 3)

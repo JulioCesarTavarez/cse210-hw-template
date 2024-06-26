@@ -1,13 +1,9 @@
 class Eternal : Goal
 {
-    public Eternal()
+    public Eternal(string goalName, string description, int points) : base(goalName, description, points)
     {
-        _goalType = "Simple";
+        
 
-
-
-
-
-        public void 
+  
     }
 }
