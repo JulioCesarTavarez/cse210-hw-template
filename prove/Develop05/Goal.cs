@@ -3,8 +3,8 @@ using System.Reflection.Metadata.Ecma335;
 
 public class Goal
 {
-    protected int _points;
-    static private int _totalPoints;
+    static protected int _points;
+    protected static int _totalPoints = 0;
     protected string _goalName;
     protected string _description;
 
@@ -46,12 +46,25 @@ public class Goal
         string description = Console.ReadLine();
         return description;
     }    
+    public static void AddPoints(int points)
+    {
+        _totalPoints += points;
+    }
 
     public static int GetTotalPoints()
     {
+        
         return _totalPoints;
     }
 
+    public virtual void DisplayGoal()
+    {
+        Console.WriteLine($" {_goalName}: {_description} ({_points} points)");
+    }
 
-
+    public virtual void RecordEvent()
+    {
+        Console.WriteLine("Recording event for a generic goal.");
+        // Add more generic behavior here if needed
+    }
 }

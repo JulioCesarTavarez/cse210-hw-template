@@ -10,4 +10,17 @@ class Simple : Goal
     {
         return _finished;
     }
+    public override void RecordEvent()
+    {
+        if (!_finished)
+        {
+            _finished = true;
+            AddPoints(_points);
+            Console.WriteLine("Event recorded for Simple goal.");
+        }
+        else
+        {
+            Console.WriteLine("This Simple goal is already complete.");
+        }
+    }
 }

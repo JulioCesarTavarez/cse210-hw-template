@@ -1,4 +1,8 @@
 using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 class Program
 {
@@ -13,6 +17,7 @@ class Program
         int menuChoice = 0;
         do
         {
+
             Console.WriteLine($"You have {Goal.GetTotalPoints()} points.");
             Console.WriteLine($"\nMenu options");
             Console.WriteLine("1. Creat New Goal");
@@ -27,11 +32,12 @@ class Program
 
             if (menuChoice == 1)
             {
+                Console.Clear();
                 Console.WriteLine("The types of goals are:");
                 Console.WriteLine("1. Simple Goal");
                 Console.WriteLine("2. Eternal Goal");
                 Console.WriteLine("3. Checklist Goal");
-                Console.WriteLine("Which type of goal would you like to create?");
+                Console.Write("Which type of goal would you like to create?  ");
                 int goalChoice = int.Parse(Console.ReadLine());
 
                 if (goalChoice == 1)
@@ -46,7 +52,7 @@ class Program
                 }
                 else if (goalChoice == 3)
                 {
-                    Checklist newgoal = new(Goal.InputGoalName(), Goal.InputDescription(), Goal.InputPoints(), Checklist.InputTimesToDo());
+                    Checklist newgoal = new(Goal.InputGoalName(), Goal.InputDescription(), Goal.InputPoints(), Checklist.InputTimesToDo(), Checklist.InputBonusPoint());
                     _goals.Add(newgoal);
                 }
 
@@ -56,18 +62,7 @@ class Program
             }
             else if (menuChoice == 2)
             {
-                Console.WriteLine("The goals are: ");
-                for (int i = 0; i < _goals.Count; i++)
-                {
-                    Console.Write($"{i}.");
-                    if (_goals[i].IsComplete())
-                    {
-                        Console.Write("[X]");
-                    }else
-                    {
-                        Console.Write("[]");
-                    }
-                }
+            ListGoals();
                 
             }
             else if (menuChoice == 3)
@@ -80,7 +75,7 @@ class Program
             }
             else if (menuChoice == 5)
             {
-                
+                RecordEvent();
             }
             else if (menuChoice == 6)
             {
@@ -88,5 +83,65 @@ class Program
             }
 
         } while (menuChoice != 6);
+
     }
+
+    static void ListGoals()
+    {
+        Console.WriteLine("Listing goals:");
+        for (int i = 0; i < _goals.Count; i++)
+        {
+            Console.Write($"{i + 1}. ");
+            if (_goals[i].IsComplete())
+            {
+                Console.Write("[X] ");
+            }
+            else
+            {
+                Console.Write("[ ] ");
+            }
+            _goals[i].DisplayGoal();
+        }
+
+    }
+    static void RecordEvent()
+    {
+        ListGoals();
+        Console.Write("Enter the number of the goal you want to record an event for: ");
+        int goalIndex = int.Parse(Console.ReadLine()) - 1;
+
+        if (goalIndex >= 0 && goalIndex < _goals.Count)
+        {
+            _goals[goalIndex].RecordEvent();
+            Console.WriteLine("Event recorded!");
+        }
+        else
+        {
+            Console.WriteLine("Invalid goal number.");
+        }
+    }
+
+        static void SaveGoals()
+    {
+        string filePath = "goals.json";
+        string jsonString = JsonSerializer.Serialize(_goals);
+        File.WriteAllText(filePath, jsonString);
+        Console.WriteLine("Goals saved to file.");
+    }
+
+    static void LoadGoals()
+    {
+        string filePath = "goals.json";
+        if (File.Exists(filePath))
+        {
+            string jsonString = File.ReadAllText(filePath);
+            _goals = JsonSerializer.Deserialize<List<Goal>>(jsonString);
+            Console.WriteLine("Goals loaded from file.");
+        }
+        else
+        {
+            Console.WriteLine("No saved goals found.");
+        }
+    }
+
 }
