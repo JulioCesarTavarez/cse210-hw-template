@@ -11,32 +11,29 @@ public class Fraction
         _denominator = 1;
     }
     public Fraction(int wholeNumber)
-    {}
-    public Fraction(int top, int bottom)
-    {}
-
-    public void GetTop()
     {
-        Console.Write("Please Ennter numerator");
-        _numerator = int.Parse(Console.ReadLine());
+        _numerator = wholeNumber;
+        _denominator = 1;
     }
-    public SetTop(int top)
+    public Fraction(int top, int bottom)
     {
         _numerator = top;
+        _denominator = bottom;
+    }
+
+    public string GetFractionString()
+    {
+        string text = $"{_numerator}/{_denominator}";
+        return text;
+    }
+    public double GetFloutValue()
+    {
+        return (double)_numerator / _denominator;
     }
 
     public void GetBottom()
     {
         Console.Write("Please Enter denominator");
         _denominator = int.Parse(Console.ReadLine());
-    }
-    public SetBottom(int bottom)
-    {
-        _denominator = bottom;
-    }
-
-    public GetFractionString()
-    {
-        // return void $"{_numerator}/{_denominator}";
     }
 }
