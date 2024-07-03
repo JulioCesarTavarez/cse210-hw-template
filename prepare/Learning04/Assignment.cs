@@ -3,13 +3,25 @@ public class Assignment
     private string _studentName;
     private string _topic;
     
+    public Assignment(string studentName, string topic)
+    {
+        _studentName = studentName;
+        _topic = topic;
+    }
+
     public string GetSummary()
     {
-        Console.WriteLine($"Please enter student's name: ");
-        _studentName = Console.ReadLine();
+        return _studentName + " - " + _topic;
+    }
 
-        Console.WriteLine($"Please enter topic: ");
-        _topic = Console.ReadLine();
+    public string GetName()
+    {
+        return _studentName;
+    }
+
+    public string GetTopic()
+    {
+        return _topic;
     }
 }
 
